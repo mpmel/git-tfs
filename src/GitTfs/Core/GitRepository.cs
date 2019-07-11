@@ -30,7 +30,7 @@ namespace GitTfs.Core
             _repository = new Repository(GitDir);
             _remoteConfigReader = remoteConfigReader;
 
-            var value = GetConfig<string>(GitTfsConstants.DisableGitignoreSupport, null);
+            var value = GetConfig<string>(GitTfsConstants.DisableGitignoreSupport, bool.TrueString);
             bool disableGitignoreSupport;
             if (value != null && bool.TryParse(value, out disableGitignoreSupport))
                 _disableGitignoreSupport = disableGitignoreSupport;
